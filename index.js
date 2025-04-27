@@ -7,6 +7,7 @@ const PORT = process.env.PORT;
 
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
+const connectionRoutes = require("./routes/connectionRoutes");
 
 const app = express();
 
@@ -17,6 +18,7 @@ connectDB();
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/connections", connectionRoutes);
 
 app.get("/", (req, res) => res.send("API is running..."));
 
